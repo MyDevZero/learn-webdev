@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <style>
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .form-container input[type="url"],
+        .form-container input[type="number"] {
+            width: 100%;
+            height: 35px;
+            padding: 0 10px;
+            font-size: 18px;
+        }
+
+        .form-container input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 20px;
+            background: #ddd;
+            outline: none;
+        }
+
+        .form-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #4caf50;
+            cursor: pointer;
+        }
+
+        .form-container input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #4caf50;
+            cursor: pointer;
+        }
+
+        .form-container button {
+            width: 200px;
+            height: 35px;
+            background: #4caf50;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .short-url-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .short-url-container input[type="text"] {
+            width: 60%;
+            height: 35px;
+            padding: 0 10px;
+            font-size: 18px;
+            background: #ddd;
+            border: none;
+        }
+
+        .short-url-container button {
+            width: 40%;
+            height: 35px;
+            background: #4caf50;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form-container">
+        <label for="url">HTTPs URL</label>
+        <input type="url" id="url" name="url" />
+
+        <label for="code-length">Length of the short URL</label>
+        <input type="range" id="code-length" name="code-length" min="4" max="8" value="4" />
+
+        <label for="expiry">Expiry of short URL</label>
+        <input type="range" id="expiry" name="expiry" min="1" max="180" value="1" />
+
+        <button>Generate</button>
+    </form>
+</body>
